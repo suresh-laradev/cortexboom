@@ -9,9 +9,8 @@ export default function Layout({
 }) {
   return (
     <>
-      {" "}
       {children}
-      <section className={"flex gap-4 py-4"}>
+      <section className={"flex flex-wrap gap-4 py-4"}>
         {completed}
         {pending}
       </section>

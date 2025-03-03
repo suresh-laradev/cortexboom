@@ -14,7 +14,7 @@ export default function Home() {
         <section
           key={index}
           className={
-            "bg-sky-900 text-accent p-1.5 rounded-sm flex place-items-center place-content-center size-56"
+            "bg-amber-400 text-accent-foreground p-1.5 rounded-sm flex place-items-center place-content-center size-56"
           }
         >
           {task}
