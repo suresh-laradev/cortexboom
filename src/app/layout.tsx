@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ReactQueryProvider from "@/_providers/react-query-provider";
+import ReactQueryProvider from "@/providers/react-query-provider";
 import Header from "@/app/_navigation/header";
-import { ThemeProvider } from "@/_providers/theme-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
