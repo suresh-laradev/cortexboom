@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from "@/_providers/react-query-provider";
-import Header from "./my-tasks/header";
+import Header from "@/app/_navigation/header";
+import { ThemeProvider } from "@/_providers/theme-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,16 +25,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-4`}
       >
-        <ReactQueryProvider>
-          <div className={"p-4"}>
-            <Header />
-            {children}
-          </div>
-        </ReactQueryProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ReactQueryProvider>
+            <div className={"p-4"}>
+              <Header />
+              {children}
+            </div>
+          </ReactQueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
