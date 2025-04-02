@@ -54,7 +54,7 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${ibmPlexSans.className} ${bebasNeue.variable} ${nunito.variable} ${ptSans.variable}  antialiased relative`}
+        className={`${ibmPlexSans.className} ${bebasNeue.variable} ${nunito.variable} ${ptSans.variable}  antialiased relative h-screen`}
       >
         <ThemeProvider
           attribute="class"

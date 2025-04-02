@@ -1,13 +1,13 @@
 "use server";
 
-const myTasks = async (): Promise<string[]> => {
-  const tasks: string[] = [
-    "master react",
-    "master typescript",
-    "master tansctack query",
-    "master nextjs",
-  ];
+const tasks: string[] = [
+  "master react",
+  "master typescript",
+  "master tansctack query",
+  "master nextjs",
+];
 
+const myTasks = async (): Promise<string[]> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (tasks.length > 0) {
