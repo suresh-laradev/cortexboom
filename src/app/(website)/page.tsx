@@ -2,12 +2,14 @@ import ThemeToggle from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
   dashboardPath,
+  loginPath,
   productsPath,
-  signinPath,
+
   signupPath,
   websitePath,
 } from "@/paths";
 import Link from "next/link";
+import Footer from "@/app/_navigation/footer";
 
 const LandingPage = () => {
   return (
@@ -20,12 +22,13 @@ const LandingPage = () => {
           <NavLink href={productsPath()}>products</NavLink>
         </section>
         <section className="flex gap-4">
-        <Button variant="default" size="sm" asChild><Link href={{ pathname: signinPath() }}>signin</Link></Button>
+        <Button variant="default" size="sm" asChild><Link href={{ pathname: loginPath() }}>signin</Link></Button>
         <Button variant="default" size="sm" asChild><Link href={{ pathname: signupPath() }}>signup</Link></Button>
           <ThemeToggle />
         </section>
       </nav>
       <h1>A Landing Page</h1>
+      <Footer />
     </div>
   );
 };

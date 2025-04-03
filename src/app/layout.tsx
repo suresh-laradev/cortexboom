@@ -42,8 +42,8 @@ const bebasNeue = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Auth Page",
-  description: "Cortex Boom Auth Page",
+  title: "Cortex Boom",
+  description: "We address your problems with AI",
 };
 
 const RootLayout = ({
@@ -63,6 +63,7 @@ const RootLayout = ({
           disableTransitionOnChange
         >
           <ReactQueryProvider>{children}</ReactQueryProvider>
+
         </ThemeProvider>
       </body>
     </html>

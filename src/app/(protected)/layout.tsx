@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
-import Header from "@/app/_navigation/header";
-import Footer from "@/app/_navigation/footer";
+import SideBar from "@/app/_navigation/sidebar";
+import {
+  SidebarInset,
+
+} from "@/components/ui/sidebar"
 
 export const metadata: Metadata = {
   title: "Auth Page",
@@ -13,13 +16,7 @@ const ProtectedLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return (
-    <div className={"p-4"}>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </div>
-  );
+  return <SideBar> <SidebarInset>{children}</SidebarInset></SideBar>;
 };
 
 export default ProtectedLayout;

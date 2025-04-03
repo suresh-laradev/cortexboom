@@ -1,7 +1,14 @@
 import React from "react";
+import { ResetPasswordForm } from "@/app/(auth)/components/reset-password-form";
 
 const ResetPassword = () => {
-  return <div>ResetPassword</div>;
+  return (
+    <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-background p-6 md:p-10">
+      <div className="w-full max-w-sm">
+        <ResetPasswordForm />
+      </div>
+    </div>
+  );
 };
 
 export default ResetPassword;

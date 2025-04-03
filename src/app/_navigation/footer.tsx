@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { aboutUsPath, contactUsPath, privacyPolicyPath, termsOfServicePath } from "@/paths";
 import { HeartIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -24,22 +25,22 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/about" className="hover:underline">
+              <Link href={{pathname:aboutUsPath()}} className="hover:underline">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:underline">
+              <Link href={{pathname:contactUsPath()}} className="hover:underline">
                 Contact
               </Link>
             </li>
             <li>
-              <Link href="/privacy" className="hover:underline">
+              <Link href={{pathname:privacyPolicyPath()}} className="hover:underline">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:underline">
+              <Link href={{pathname:termsOfServicePath()}} className="hover:underline">
                 Terms of Service
               </Link>
             </li>
