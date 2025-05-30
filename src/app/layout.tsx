@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import ReactQueryProvider from "@/providers/react-query-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { PT_Sans, Nunito  } from "next/font/google";
+import type { Metadata } from "next";
+import { Nunito, PT_Sans } from "next/font/google";
 import localFont from "next/font/local";
-
+import "./globals.css";
 
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
+  preload: false,
 });
 
 const ptSans = PT_Sans({
   variable: "--font-pt-sans",
   subsets: ["latin"],
   weight: ["400", "700"],
+  preload: false,
 });
-
 
 const ibmPlexSans = localFont({
   src: [
@@ -63,7 +63,6 @@ const RootLayout = ({
           disableTransitionOnChange
         >
           <ReactQueryProvider>{children}</ReactQueryProvider>
-
         </ThemeProvider>
       </body>
     </html>

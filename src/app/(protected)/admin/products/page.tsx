@@ -1,9 +1,9 @@
-import { getProducts } from "@/app/(protected)/products/actions/products";
+import { getProducts } from "@/app/(protected)/admin/products/actions/products";
 import { DataTable } from "@/components/data-table";
 import { SectionCards } from "@/components/section-cards";
 import { SiteHeader } from "@/components/site-header";
 
-import data from "@/app/(protected)/dashboard/data.json"
+import data from "@/app/(protected)/admin/dashboard/data.json"
 
 const Products = async () => {
   const products = await getProducts();

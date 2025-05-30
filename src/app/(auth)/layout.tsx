@@ -1,8 +1,8 @@
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
-
 export const metadata: Metadata = {
-  title: "Auth Page",
-  description: "Cortex Boom Auth Page",
+  title: "Login Page",
+  description: "Cortex Boom Official Login Page",
 };
 
 const AuthLayout = ({
@@ -10,7 +10,12 @@ const AuthLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <main>{children}</main>;
+  return (
+    <main>
+      {children}
+      <Toaster />
+    </main>
+  );
 };
 
 export default AuthLayout;

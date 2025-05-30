@@ -1,83 +1,68 @@
 "use client";
 
+import ThemeToggle from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { aboutUsPath, contactUsPath, privacyPolicyPath, termsOfServicePath } from "@/paths";
-import { HeartIcon } from "lucide-react";
+import { adminDashboardPath, productsPath, websitePath } from "@/paths";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-8 px-6">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Column 1: About */}
+    <footer className="bg-yellow-50 dark:bg-gray-900 py-12 px-6 text-sm text-gray-700 dark:text-gray-300">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
         <div>
-          <h3 className="text-lg font-semibold mb-4">About CortexBoom</h3>
-          <p className="text-sm">
-            CortexBoom is your go-to platform for innovative solutions and
-            cutting-edge technology. Join us on our journey to transform the
-            future.
+          <h4 className="text-lg font-bold mb-2">GoldBot</h4>
+          <p className="text-muted-foreground">
+            Trade smarter with our intelligent XAUUSD bots.
           </p>
         </div>
-
-        {/* Column 2: Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2">
+          <h4 className="text-lg font-bold mb-2">Links</h4>
+          <ul className="space-y-1">
             <li>
-              <Link href={{pathname:aboutUsPath()}} className="hover:underline">
-                About Us
+              <Link
+                className="hover:text-yellow-500 hover:underline transition duration-200"
+                href={websitePath()}
+              >
+                Home
               </Link>
             </li>
             <li>
-              <Link href={{pathname:contactUsPath()}} className="hover:underline">
-                Contact
+              <Link
+                className="hover:text-yellow-500 hover:underline transition duration-200"
+                href={productsPath()}
+              >
+                Products
               </Link>
             </li>
             <li>
-              <Link href={{pathname:privacyPolicyPath()}} className="hover:underline">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link href={{pathname:termsOfServicePath()}} className="hover:underline">
-                Terms of Service
+              <Link
+                className="hover:text-yellow-500 hover:underline transition duration-200"
+                href={adminDashboardPath()}
+              >
+                Dashboard
               </Link>
             </li>
           </ul>
         </div>
-
-        {/* Column 3: Subscribe */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Subscribe Now</h3>
-          <form className="flex flex-col gap-4">
+          <h4 className="text-lg font-bold mb-2">Subscribe</h4>
+          <form className="flex flex-col gap-2">
             <Input
               type="email"
-              placeholder="Enter your email"
+              placeholder="you@example.com"
+              className="bg-white dark:bg-gray-800"
             />
-            <Button type="submit" variant={"default"} size={"sm"}>
-              Subscribe
-            </Button>
+            <Button className="w-full">Subscribe</Button>
+            <div className="pt-2">
+              <ThemeToggle />
+            </div>
           </form>
         </div>
       </div>
-
-      {/* Footer Bottom Section */}
-      <div className="mt-8 border-t border-gray-700 pt-4">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          {/* Left Section */}
-          <p className="text-sm text-center md:text-left">
-            © {new Date().getFullYear()} CortexBoom. All rights reserved.
-          </p>
-
-          {/* Right Section */}
-          <div className="flex items-center gap-2 mt-2 md:mt-0">
-            <span>Made with</span>
-            <HeartIcon height={16} width={16} className="text-red-500" />
-            <span>by CortexBoom Team</span>
-          </div>
-        </div>
-      </div>
+      <p className="mt-8 text-center text-xs text-muted-foreground">
+        © 2025 GoldBot. All rights reserved.
+      </p>
     </footer>
   );
 };

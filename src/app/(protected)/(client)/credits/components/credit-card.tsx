@@ -1,5 +1,4 @@
 import { Coins } from "lucide-react";
-import React from "react";
 
 const CreditCard = () => {
   return (

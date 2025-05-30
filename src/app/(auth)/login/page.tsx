@@ -1,9 +1,9 @@
 import { GalleryVerticalEnd } from "lucide-react";
 
 import { LoginForm } from "@/app/(auth)/components/login-form";
+import { websitePath } from "@/paths";
 import Image from "next/image";
 import Link from "next/link";
-import { websitePath } from "@/paths";
 
 const LoginPage = () => {
   return (
@@ -28,10 +28,11 @@ const LoginPage = () => {
       </div>
       <div className="relative hidden bg-muted lg:block">
         <Image
-          src="/placeholder.svg"
-          alt="Image"
-          width={1000}
-          height={1000}
+          src="/auth.png"
+          alt="Authentication background"
+          width={1920}
+          height={1080}
+          priority
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />
       </div>

@@ -1,9 +1,9 @@
 "use client";
 
-import * as React from "react";
 import {
   IconCamera,
   IconChartBar,
+  IconCreditCard,
   IconDashboard,
   IconDatabase,
   IconFileAi,
@@ -15,11 +15,11 @@ import {
   IconPackages,
   IconReport,
   IconSearch,
-  IconSettings,
   IconUsers,
 } from "@tabler/icons-react";
+import * as React from "react";
 
-import { NavDocuments } from "@/components/nav-documents";
+// import { NavDocuments } from "@/components/nav-documents";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
@@ -32,14 +32,15 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import Link from "next/link";
 import {
+  adminDashboardPath,
   analyticsPath,
-  dashboardPath,
   ordersPath,
+  paymentsPath,
   productsPath,
   usersPath,
 } from "@/paths";
+import Link from "next/link";
 
 const data = {
   user: {
@@ -50,7 +51,7 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: dashboardPath(),
+      url: adminDashboardPath(),
       icon: IconDashboard,
     },
     {
@@ -124,12 +125,12 @@ const data = {
   ],
   navSecondary: [
     {
-      title: "Settings",
-      url: "#",
-      icon: IconSettings,
+      title: "Payments",
+      url: paymentsPath(),
+      icon: IconCreditCard,
     },
     {
-      title: "Get Help",
+      title: "Support",
       url: "#",
       icon: IconHelp,
     },
@@ -178,7 +179,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
+        {/* <NavDocuments items={data.documents} /> */}
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>

@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 
 export const ResetPasswordForm = ({
   className,
@@ -18,7 +18,12 @@ export const ResetPasswordForm = ({
       <div className="grid gap-6">
         <div className="grid gap-3">
           <Label htmlFor="password">New Password</Label>
-          <Input id="password" type="password" placeholder="••••••••" required />
+          <Input
+            id="password"
+            type="password"
+            placeholder="••••••••"
+            required
+          />
         </div>
         <div className="grid gap-3">
           <Label htmlFor="confirm-password">Confirm Password</Label>

@@ -1,7 +1,7 @@
 import {
   getProduct,
   ProductType,
-} from "@/app/(protected)/products/actions/products";
+} from "@/app/(protected)/admin/products/actions/products";
 import Link from "next/link";
 
 interface PropType {

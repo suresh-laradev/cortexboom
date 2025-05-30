@@ -1,9 +1,11 @@
 import { GalleryVerticalEnd } from "lucide-react";
 
+import { DiscordSvg } from "@/app/(auth)/components/discord-svg";
 import { SignupForm } from "@/app/(auth)/components/signup-form";
+import { Button } from "@/components/ui/button";
+import { loginPath, websitePath } from "@/paths";
 import Image from "next/image";
 import Link from "next/link";
-import { websitePath } from "@/paths";
 
 const SignupPage = () => {
   return (
@@ -23,15 +25,37 @@ const SignupPage = () => {
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">
             <SignupForm />
+
+            <div className="grid gap-6 mt-6">
+              <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
+                <span className="bg-background text-muted-foreground relative z-10 px-2">
+                  Or continue with
+                </span>
+              </div>
+              <Button variant="outline" className="w-full">
+                <DiscordSvg />
+                Sign Up with Discord
+              </Button>
+              <div className="text-center text-sm">
+                Already have an account?{" "}
+                <Link
+                  href={{ pathname: loginPath() }}
+                  className="underline underline-offset-4"
+                >
+                  Log in
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div className="relative hidden bg-muted lg:block">
         <Image
-          src="/placeholder.svg"
-          alt="Image"
-          width={1000}
-          height={1000}
+          src="/auth.png"
+          alt="Authentication background"
+          width={1920}
+          height={1080}
+          priority
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />
       </div>

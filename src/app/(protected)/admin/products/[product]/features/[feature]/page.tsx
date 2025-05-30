@@ -2,7 +2,7 @@ import React from "react";
 import {
   getFeature,
   FeatureType,
-} from "@/app/(protected)/products/actions/products";
+} from "@/app/(protected)/admin/products/actions/products";
 
 interface PropType {
   params: Promise<{

@@ -1,7 +1,6 @@
 "use client";
-import { JSX, ReactNode } from "react";
 import { motion, Variants } from "motion/react";
-import React from "react";
+import React, { JSX, ReactNode } from "react";
 
 export type PresetType =
   | "fade"

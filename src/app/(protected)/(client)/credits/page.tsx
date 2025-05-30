@@ -1,5 +1,4 @@
-import React from "react";
-import CreditCard from "@/app/(protected)/credits/components/credit-card";
+import CreditCard from "@/app/(protected)/(client)/credits/components/credit-card";
 
 const CreditPage = () => {
   return (
