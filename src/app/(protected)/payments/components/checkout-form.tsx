@@ -33,39 +33,39 @@ const CustomStripeForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!stripe || !elements) return;
+    // if (!stripe || !elements) return;
 
-    setLoading(true);
+    // setLoading(true);
 
-    try {
-      const { clientSecret } = await createPaymentIntent(amount);
-      if (!clientSecret) {
-        throw new Error("Failed to initialize payment");
-      }
+    // try {
+    //   const { clientSecret } = await createPaymentIntent(amount);
+    //   if (!clientSecret) {
+    //     throw new Error("Failed to initialize payment");
+    //   }
 
-      const cardNumberElement = elements.getElement(CardNumberElement);
-      if (!cardNumberElement) {
-        throw new Error("Card information is incomplete");
-      }
+    //   const cardNumberElement = elements.getElement(CardNumberElement);
+    //   if (!cardNumberElement) {
+    //     throw new Error("Card information is incomplete");
+    //   }
 
-      const result = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: cardNumberElement,
-        },
-      });
+    //   const result = await stripe.confirmCardPayment(clientSecret, {
+    //     payment_method: {
+    //       card: cardNumberElement,
+    //     },
+    //   });
 
-      if (result.error) {
-        throw new Error(result.error.message);
-      }
+    //   if (result.error) {
+    //     throw new Error(result.error.message);
+    //   }
 
-      if (result.paymentIntent?.status === "succeeded") {
-        alert("Payment successful!");
-      }
-    } catch (error) {
-      alert(error.message || "An unknown error occurred");
-    } finally {
-      setLoading(false);
-    }
+    //   if (result.paymentIntent?.status === "succeeded") {
+    //     alert("Payment successful!");
+    //   }
+    // } catch (error) {
+    //   alert(error.message || "An unknown error occurred");
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
